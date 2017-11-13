@@ -1,0 +1,297 @@
+@font-face {
+    font-family: my-font;
+    src: url('../fonts/华文行楷.ttf');
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.error-group{
+	color: red;
+}
+
+.error-group .input-label span{
+	margin-left: 20px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.clr {
+    clear: both;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    color: #fff;
+    background: url('../images/bg.png') left bottom repeat;
+    line-height: 80px;
+}
+
+header h2 {
+    margin: 0 10px;
+    padding-left: 100px;
+    background: url('../images/logo.png') no-repeat;
+    background-size: 80px;
+    text-shadow: 2px 2px 2px #ddd;
+    font-family: my-font;
+    font-size: 35px;
+    font-weight: normal;
+    flex-grow: 1;
+}
+
+header nav {
+    float: right;
+    margin: 0 20px;
+    list-style: none;
+}
+
+header nav a {
+    margin-left: 20px;
+    color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.content aside.left {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    text-align: center;
+    background: #ededed;
+}
+
+.content aside.left .menu {
+    flex-grow: 1;
+}
+
+.content aside.left a.menu-item {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+    line-height: 40px;
+}
+
+.content aside.left a.menu-item:hover {
+    color: #fff;
+    background: #aaa;
+}
+
+.content aside.left .menu-item.active {
+    background: #bbb;
+}
+
+.content aside.left .head-avatar {
+    bottom: 0;
+    width: 100%;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+.content aside.left .head-avatar img {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.content aside.left .head-avatar img:hover {
+    transition: transform 2s;
+    transform: rotate(360deg);
+}
+
+.content .left .head-avatar h5 {
+    text-align: center;
+    color: #454545;
+    line-height: 2;
+}
+
+.content .right {
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    width: 85%;
+}
+
+.content .right h2 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 80px;
+}
+
+.content .main-panel {
+    flex-grow: 1;
+}
+
+.content .main-panel section {
+    padding: 15px 15px 0 15px;
+}
+
+.toolbar {
+    text-align: left;
+}
+
+.toolbar input {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.toolbar button {
+    width: 80px;
+    height: 25px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.form-title {
+    margin: 15px;
+}
+
+.form .form-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.form .form-left {
+    width: 50%;
+}
+
+.form .upload-avatar {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.form .upload-avatar .upload-avatar-btn, .upload-avatar img {
+    width: 200px;
+}
+
+.form .upload-avatar img {
+    border: 2px solid #eee;
+    border-radius: 20px;
+}
+
+.form-title {
+    text-align: center;
+}
+
+.form-control {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.form-control button {
+    margin: 5px;
+    padding: 8px 25px;
+    text-align: center;
+    color: white;
+    border: none;
+    font-size: 14px;
+}
+
+.form-control .button-green {
+    background-color: #4CAF50;
+}
+
+.form-control .button-blue {
+    background-color: #008CBA;
+}
+
+.form-control .button-bray {
+    background-color: #e7e7e7;
+}
+
+.form .input-group {
+    margin-top: 25px;
+}
+
+.form .input-group .input-label {
+    text-align: right;
+}
+
+.form .input-group .input {
+    width: 70%;
+    height: 30px;
+    font-size: 14px;
+}
+
+.form .input-group .radio-label {
+    float: left;
+}
+
+.form .input-group .radio-group {
+    float: left;
+    text-align: left;
+}
+
+.form .input-group .radio-group label {
+    margin-right: 20px;
+}
+
+.form .input-group .select {
+    width: 70%;
+    height: 30px;
+    margin-top: 25px;
+}
+
+.form .input-group .multiple-select {
+    width: 70%;
+    height: 80px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.table {
+    width: 100%;
+    margin: auto;
+    border-spacing: 0;
+    border: solid 1px #DDDDDD;
+    border-collapse: collapse;
+}
+
+.table tr {
+    width: 100%;
+    line-height: 35px;
+}
+
+.table tr:hover {
+    background: #f3f3f3;
+}
+
+.table thead {
+    background: #eee;
+}
+
+.table tr td {
+    border: 1px solid #ddd;
+    line-height: 35px;
+}
+
+.table tr td input {
+    float: left;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+    line-height: 35px;
+}

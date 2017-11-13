@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+  <display-name>user_springmvc-hibernate</display-name>
+  	<!-- 配置需要初始化的xml文件,不配置时默认加载applicatinContext.xml -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+    	classpath:spring-hibernate.xml
+    	<!-- classpath:springmvc.xml -->
+        </param-value>
+	</context-param>
+	
+	<!-- springmvc DispatcherServlet -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 加载配置文件 -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+        classpath:springmvc.xml
+        </param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<!-- 由SpringMVC拦截所有请求 -->
+		<url-pattern>/</url-pattern>
+		<!-- <url-pattern>*.action</url-pattern> -->
+	</servlet-mapping>
+
+	<!-- 配置spring的监听器，默认加载WEB-INF/applicationContext.xml,通过上面的contex-param标签配置之后，加载context-param中的子标签param-value指定的xml文件 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 配置字符集拦截器，由spring提供 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- struts.xml不需要在本文件中指定加载，由框架自行加载 -->
+
+	<!-- 配置session超时时间，单位分钟 -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
